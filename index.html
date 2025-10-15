@@ -9,15 +9,15 @@
         /* Global Styles */
         :root {
               /* Modern, vibrant palette */
-              --primary: white; /* dark navy */
-              --secondary: #6ee7b7; /* mint */
-              --accent: #7c5cff; /* violet */
-              --light: rgba(255,255,255,0.85);
-              --muted: rgba(255,255,255,0.7);
-              --card-bg: rgba(255,255,255,0.06);
-              --glass-border: rgba(255,255,255,0.08);
-              --text: #e6eef8;
-              --text-light: rgba(230,238,248,0.8);
+                  --bg: #061125; /* deep navy background */
+                  --primary: #7c5cff; /* violet accent */
+                  --secondary: #6ee7b7; /* mint accent */
+                  --accent: #ff7ab6; /* pink accent for highlights */
+                  --surface: rgba(255,255,255,0.03); /* subtle glass surface */
+                  --glass-border: rgba(255,255,255,0.06);
+                  --text: #e6eef8; /* main light text */
+                  --muted: rgba(230,238,248,0.78); /* secondary light text */
+                  --muted-strong: rgba(230,238,248,0.9);
         }
         
         * {
@@ -33,7 +33,8 @@
         
         body {
             line-height: 1.6;
-            color: var(--text);
+                color: var(--text);
+                background: var(--bg);
             overflow-x: hidden;
         }
         
@@ -55,7 +56,7 @@
         
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--primary);
+            color: var(--muted-strong);
             margin-bottom: 15px;
             position: relative;
             display: inline-block;
@@ -73,29 +74,29 @@
         }
         
         .section-title p {
-            color: var(--text-light);
+            color: var(--muted);
             max-width: 600px;
             margin: 0 auto;
         }
         
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background: var(--secondary);
-            color: white;
+            padding: 12px 28px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--bg);
             border: none;
-            border-radius: 4px;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            font-weight: 700;
+            transition: transform 0.22s, box-shadow 0.22s;
             text-decoration: none;
+            box-shadow: 0 10px 30px rgba(124,92,255,0.12);
         }
-        
+
         .btn:hover {
-            background: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 18px 40px rgba(124,92,255,0.18);
         }
         
         .btn-accent {
@@ -127,12 +128,12 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--muted-strong);
             text-decoration: none;
         }
-        
+
         .logo span {
-            color: var(--secondary);
+            color: var(--primary);
         }
         
         .nav-links {
@@ -146,13 +147,13 @@
         
         .nav-links a {
             text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            transition: color 0.3s ease;
+            color: var(--muted);
+            font-weight: 600;
+            transition: color 0.22s ease;
         }
-        
+
         .nav-links a:hover {
-            color: var(--secondary);
+            color: var(--primary);
         }
         
         .menu-toggle {
@@ -162,7 +163,7 @@
         }
         
         /* Hero Section */
-        .hero {
+    .hero {
                 background: radial-gradient(1200px 600px at 10% 20%, rgba(124,92,255,0.18), transparent 10%),
                             radial-gradient(1000px 500px at 90% 80%, rgba(110,231,183,0.12), transparent 12%),
                             linear-gradient(180deg, rgba(7,12,23,0.85), rgba(9,14,28,0.9)),
@@ -172,7 +173,7 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            color: white;
+            color: var(--muted-strong);
             text-align: center;
         }
         
@@ -218,7 +219,7 @@
         
         .about-text p {
             margin-bottom: 20px;
-            color: var(--text-light);
+            color: var(--muted);
         }
         
         .about-image {
@@ -258,7 +259,7 @@
 
         .course-icon {
             background: linear-gradient(135deg, var(--accent), var(--secondary));
-            color: white;
+            color: var(--bg);
             font-size: 1.8rem;
             padding: 22px;
             text-align: center;
@@ -275,9 +276,41 @@
         }
 
         .course-content p {
-            color: var(--text-light);
+            color: var(--muted);
             margin-bottom: 20px;
         }
+        /* Admission CTA styled to match site palette */
+        .admission-info {
+            background: linear-gradient(90deg, rgba(110,231,183,0.08), rgba(124,92,255,0.06));
+            color: var(--muted-strong);
+            padding: 28px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+            border: 1px solid rgba(255,255,255,0.04);
+            box-shadow: 0 8px 30px rgba(2,6,23,0.45);
+        }
+        .admission-info h3 {
+            font-size: 1.9rem;
+            margin: 0 0 8px 0;
+            color: var(--primary);
+        }
+        .admission-info p {
+            color: var(--muted);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .admission-info .contact-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: var(--bg);
+            padding: 12px 22px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+        .admission-info .contact-button:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(124,92,255,0.14); }
         
         /* Teachers Section */
         .teachers {
@@ -321,7 +354,7 @@
         }
         
         .teacher-info p {
-            color: var(--text-light);
+            color: var(--muted);
             font-style: italic;
             margin-bottom: 15px;
         }
@@ -341,7 +374,7 @@
         
         .expertise-icon {
             background: var(--secondary);
-            color: white;
+            color: var(--bg);
             width: 60px;
             height: 60px;
             border-radius: 50%;
@@ -359,12 +392,12 @@
         }
         
         .expertise-text p {
-            color: var(--text-light);
+            color: var(--muted);
         }
         
         /* Location Section */
         .location {
-            background: var(--light);
+            background: var(--surface);
         }
         
         .location-content {
@@ -543,10 +576,10 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.06);
             border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
+            color: var(--muted-strong);
+            transition: all 0.22s ease;
         }
         
         .social-links a:hover {
@@ -676,34 +709,50 @@
             <div class="courses-grid">
                 <div class="course-card">
                     <div class="course-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                        <i class="fas fa-dna"></i>
                     </div>
                     <div class="course-content">
-                        <h3>JEET</h3>
-                        <p>Focused coaching for JEET aspirants: concept clarity, advanced problem solving, and regular mock tests to boost performance.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>NEET Preparation</h3>
+                        <p>Comprehensive coaching for the National Eligibility cum Entrance Test (NEET) for aspiring medical and dental students. Focus on Physics, Chemistry, and Biology.</p>
+                        <a href="#contact" class="btn">Learn More</a>
                     </div>
                 </div>
                 <div class="course-card">
                     <div class="course-icon">
-                        <i class="fas fa-book"></i>
+                        <i class="fas fa-calculator"></i>
                     </div>
                     <div class="course-content">
-                        <h3>JEE</h3>
-                        <p>Comprehensive JEE training covering theory, application, and time-tested strategies for cracking the exam.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>JEE Preparation</h3>
+                        <p>Intensive training for the Joint Entrance Examination (JEE Main & Advanced) for admission to premier engineering institutes. Covering Physics, Chemistry, and Mathematics.</p>
+                        <a href="#contact" class="btn">Learn More</a>
                     </div>
                 </div>
                 <div class="course-card">
                     <div class="course-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
+                        <i class="fas fa-school"></i>
                     </div>
                     <div class="course-content">
-                        <h3>KCET</h3>
-                        <p>Targeted KCET preparation with past-paper practice, speed techniques, and personalized feedback to maximize scores.</p>
-                        <a href="#" class="btn">Learn More</a>
+                        <h3>KCET Preparation</h3>
+                        <p>Dedicated coaching for the Karnataka Common Entrance Test (KCET) for admissions to various professional courses in Karnataka.</p>
+                        <a href="#contact" class="btn">Learn More</a>
                     </div>
                 </div>
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>Board Exam Coaching</h3>
+                        <p>In-depth subject tuition for students from <strong>First Standard to Twelfth Standard</strong> for all major boards. Personalized and focused approach to ensure strong foundational knowledge and excellent grades.</p>
+                        <a href="#contact" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="admission-info">
+                <h3>Admissions Open Now!</h3>
+                <p>Don't miss the opportunity to achieve your academic goals with Spark Learning Hub.</p>
+                <p style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 18px;">Contact us for personalized guidance!</p>
+                <a href="tel:+917019682889" class="contact-button">Call Now: 070196 82889</a>
             </div>
         </div>
     </section>
@@ -813,11 +862,11 @@
                     <div class="location-details">
                         <div class="location-detail">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>123 Education Street, Knowledge City, KC 12345</p>
+                            <p>4th Floor, B-BLOCK, 739, AECS B Block, AECS Layout, Singasandra, Bengaluru, Karnataka 560114</p>
                         </div>
                         <div class="location-detail">
                             <i class="fas fa-phone"></i>
-                            <p>+1 (555) 123-4567</p>
+                            <p>070196 82889</p>
                         </div>
                         <div class="location-detail">
                             <i class="fas fa-envelope"></i>
@@ -825,13 +874,13 @@
                         </div>
                         <div class="location-detail">
                             <i class="fas fa-clock"></i>
-                            <p>Monday - Friday: 9:00 AM - 8:00 PM<br>Saturday: 9:00 AM - 5:00 PM<br>Sunday: 10:00 AM - 4:00 PM</p>
+                            <p>Closed ⋅ Opens 10 am Thu</p>
                         </div>
                     </div>
                     <a href="#contact" class="btn">Get Directions</a>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.7191097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANARY!5e0!3m2!1sen!2sus!4v1629783211335!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62232.29695710294!2d77.58436812936489!3d12.874342209386406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15d14a4e5051%3A0x5ecfe9eadc11ca59!2sSPARK%20TUITION%20CENTRE!5e0!3m2!1sen!2sin!4v1760548107549!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -850,11 +899,11 @@
                     <div class="contact-details">
                         <div class="contact-detail">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>123 Education Street, Knowledge City, KC 12345</p>
+                            <p>4th Floor, B-BLOCK, 739, AECS B Block, AECS Layout, Singasandra, Bengaluru, Karnataka 560114</p>
                         </div>
                         <div class="contact-detail">
                             <i class="fas fa-phone"></i>
-                            <p>+1 (555) 123-4567</p>
+                            <p>070196 82889</p>
                         </div>
                         <div class="contact-detail">
                             <i class="fas fa-envelope"></i>
@@ -862,7 +911,7 @@
                         </div>
                         <div class="contact-detail">
                             <i class="fas fa-clock"></i>
-                            <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
+                            <p>Closed ⋅ Opens 10 am Thu</p>
                         </div>
                     </div>
                     <div class="social-links">
@@ -945,8 +994,8 @@
                 <div class="footer-column">
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Education Street, Knowledge City</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 4th Floor, B-BLOCK, 739, AECS B Block, AECS Layout, Singasandra, Bengaluru, Karnataka 560114</li>
+                        <li><i class="fas fa-phone"></i> 070196 82889</li>
                         <li><i class="fas fa-envelope"></i> info@edumentor.com</li>
                     </ul>
                 </div>
